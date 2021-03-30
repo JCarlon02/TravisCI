@@ -5,7 +5,7 @@ branches:
   - master
 install:
   - nuget restore TravisCI.sln
-  - nuget install NUnit.Console -Version 3.9.0 -Tests testrunner
+  
 script:
   - msbuild /p:Configuration=Release TravisCI.sln
   - mono ./packages/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./Tests/bin/Release/Tests.dll 
