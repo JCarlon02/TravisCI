@@ -31,5 +31,103 @@ namespace TravisCILab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+
+        [Test]
+        public void Subtract_ValidCarlon()
+        {
+            Assert.AreEqual(1, Program.Subtract("2", "1"));
+            Assert.AreEqual(1, Program.Subtract("3", "2"));
+            Assert.AreEqual(2, Program.Subtract("7", "5"));
+        }
+
+        [Test]
+        public void Subtract_InvalidCarlon()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        [Test]
+        public void Subtract_NullCarlon()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+        [Test]
+        public void Multiply_ValidCarlon()
+        {
+            Assert.AreEqual(2, Program.Multiply("2", "1"));
+            Assert.AreEqual(6, Program.Multiply("3", "2"));
+            Assert.AreEqual(35, Program.Multiply("7", "5"));
+        }
+
+        [Test]
+        public void Multiply_InvalidCarlon()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_NullCarlon()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+
+        [Test]
+        public void Divide_ValidCarlon()
+        {
+            Assert.AreEqual(2, Program.Divide("2", "1"));
+            Assert.AreEqual(3, Program.Divide("3", "1"));
+            Assert.AreEqual(2, Program.Divide("10", "5"));
+        }
+
+        [Test]
+        public void Divide_InvalidCarlon()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_NullCarlon()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        [Test]
+        public void Power_ValidCarlon()
+        {
+            Assert.AreEqual(2, Program.Power("2", "1"));
+            Assert.AreEqual(9, Program.Power("3", "2"));
+            Assert.AreEqual(8, Program.Power("2", "3"));
+        }
+
+        [Test]
+        public void Power_InvalidCarlon()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_NullCarlon()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
+
     }
+
+
 }
